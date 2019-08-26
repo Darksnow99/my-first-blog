@@ -40,7 +40,7 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
-def post_delete(request, pk):
+def post_delete(request, pk): # delete-button
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return render(request, 'blog/post_delete.html', {'post': post})
